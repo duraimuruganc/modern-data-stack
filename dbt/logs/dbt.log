@@ -1,0 +1,417 @@
+[0m12:07:21.422429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bc1e088fb10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bc1e086aad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bc1e0a3e590>]}
+
+
+============================== 12:07:21.435507 | 9a2898a5-48d2-454f-836d-814694f757cc ==============================
+[0m12:07:21.435507 [info ] [MainThread]: Running with dbt=1.10.7
+[0m12:07:21.439701 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/opt/airflow/dbt/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt build --project-dir /opt/airflow/dbt --profiles-dir /opt/airflow/dbt', 'send_anonymous_usage_stats': 'True'}
+[0m12:07:23.499834 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9a2898a5-48d2-454f-836d-814694f757cc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bc1e0a5bc50>]}
+[0m12:07:23.586812 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9a2898a5-48d2-454f-836d-814694f757cc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bc1ab738690>]}
+[0m12:07:23.590470 [info ] [MainThread]: Registered adapter: snowflake=1.10.0
+[0m12:07:23.954961 [debug] [MainThread]: checksum: 44f4b502e2ddc67beed4db71ce39b63f2d3b7fc0b96e49a69b096c8f6cc370bc, vars: {}, profile: , target: , version: 1.10.7
+[0m12:07:23.961001 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m12:07:23.963289 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '9a2898a5-48d2-454f-836d-814694f757cc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bc1e5143f90>]}
+[0m12:07:26.135330 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9a2898a5-48d2-454f-836d-814694f757cc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bc1ab4070d0>]}
+[0m12:07:26.299245 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt/target/manifest.json
+[0m12:07:26.311608 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt/target/semantic_manifest.json
+[0m12:07:26.390477 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9a2898a5-48d2-454f-836d-814694f757cc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bc1a8e09a50>]}
+[0m12:07:26.392567 [info ] [MainThread]: Found 1 model, 3 data tests, 1 source, 477 macros
+[0m12:07:26.399332 [info ] [MainThread]: 
+[0m12:07:26.402235 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:07:26.405019 [info ] [MainThread]: 
+[0m12:07:26.407955 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m12:07:26.411806 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_API_DATA'
+[0m12:07:26.500688 [debug] [ThreadPool]: Using snowflake connection "list_API_DATA"
+[0m12:07:26.503071 [debug] [ThreadPool]: On list_API_DATA: show terse schemas in database API_DATA
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.7", "profile_name": "modern_mds", "target_name": "dev", "connection_name": "list_API_DATA"} */
+[0m12:07:26.504754 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:07:29.047999 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 2.542 seconds
+[0m12:07:29.052946 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_API_DATA, now create_API_DATA_ANALYTICS_staging)
+[0m12:07:29.055271 [debug] [ThreadPool]: Creating schema "database: "API_DATA"
+schema: "ANALYTICS_staging"
+"
+[0m12:07:29.065042 [debug] [ThreadPool]: Using snowflake connection "create_API_DATA_ANALYTICS_staging"
+[0m12:07:29.067058 [debug] [ThreadPool]: On create_API_DATA_ANALYTICS_staging: create schema if not exists API_DATA.ANALYTICS_staging
+/* {"app": "dbt", "dbt_version": "1.10.7", "profile_name": "modern_mds", "target_name": "dev", "connection_name": "create_API_DATA_ANALYTICS_staging"} */
+[0m12:07:29.453305 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.384 seconds
+[0m12:07:29.458741 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_API_DATA_ANALYTICS_staging, now list_API_DATA_ANALYTICS_staging)
+[0m12:07:29.483287 [debug] [ThreadPool]: Using snowflake connection "list_API_DATA_ANALYTICS_staging"
+[0m12:07:29.485409 [debug] [ThreadPool]: On list_API_DATA_ANALYTICS_staging: show objects in API_DATA.ANALYTICS_staging
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.7", "profile_name": "modern_mds", "target_name": "dev", "connection_name": "list_API_DATA_ANALYTICS_staging"} */;
+[0m12:07:29.760072 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.273 seconds
+[0m12:07:29.764714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9a2898a5-48d2-454f-836d-814694f757cc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bc1ab606250>]}
+[0m12:07:29.778431 [debug] [Thread-1 (]: Began running node model.modern_mds.stg_posts
+[0m12:07:29.781170 [info ] [Thread-1 (]: 1 of 4 START sql view model ANALYTICS_staging.stg_posts ........................ [RUN]
+[0m12:07:29.783835 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_API_DATA_ANALYTICS_staging, now model.modern_mds.stg_posts)
+[0m12:07:29.785873 [debug] [Thread-1 (]: Began compiling node model.modern_mds.stg_posts
+[0m12:07:29.799984 [debug] [Thread-1 (]: Writing injected SQL for node "model.modern_mds.stg_posts"
+[0m12:07:29.833559 [debug] [Thread-1 (]: Began executing node model.modern_mds.stg_posts
+[0m12:07:29.882829 [debug] [Thread-1 (]: Writing runtime sql for node "model.modern_mds.stg_posts"
+[0m12:07:29.919969 [debug] [Thread-1 (]: Using snowflake connection "model.modern_mds.stg_posts"
+[0m12:07:29.921865 [debug] [Thread-1 (]: On model.modern_mds.stg_posts: create or replace   view API_DATA.ANALYTICS_staging.stg_posts
+  
+  
+  
+  
+  as (
+    with src as (
+  select
+    try_to_number(userId) as user_id,
+    try_to_number(id)     as post_id,
+    cast(title as string) as title,
+    cast(body  as string) as body
+  from API_DATA.RAW.POSTS
+)
+select * from src
+  )
+/* {"app": "dbt", "dbt_version": "1.10.7", "profile_name": "modern_mds", "target_name": "dev", "node_id": "model.modern_mds.stg_posts"} */;
+[0m12:07:30.272171 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.348 seconds
+[0m12:07:30.315177 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9a2898a5-48d2-454f-836d-814694f757cc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bc1ab5dced0>]}
+[0m12:07:30.317645 [info ] [Thread-1 (]: 1 of 4 OK created sql view model ANALYTICS_staging.stg_posts ................... [[32mSUCCESS 1[0m in 0.53s]
+[0m12:07:30.320934 [debug] [Thread-1 (]: Finished running node model.modern_mds.stg_posts
+[0m12:07:30.324645 [debug] [Thread-3 (]: Began running node test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9
+[0m12:07:30.325663 [debug] [Thread-4 (]: Began running node test.modern_mds.not_null_stg_posts_user_id.66d77b29fa
+[0m12:07:30.326764 [debug] [Thread-2 (]: Began running node test.modern_mds.unique_stg_posts_post_id.ec6994c39f
+[0m12:07:30.329024 [info ] [Thread-3 (]: 2 of 4 START test not_null_stg_posts_post_id ................................... [RUN]
+[0m12:07:30.331337 [info ] [Thread-4 (]: 3 of 4 START test not_null_stg_posts_user_id ................................... [RUN]
+[0m12:07:30.333755 [info ] [Thread-2 (]: 4 of 4 START test unique_stg_posts_post_id ..................................... [RUN]
+[0m12:07:30.336338 [debug] [Thread-3 (]: Acquiring new snowflake connection 'test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9'
+[0m12:07:30.338450 [debug] [Thread-4 (]: Acquiring new snowflake connection 'test.modern_mds.not_null_stg_posts_user_id.66d77b29fa'
+[0m12:07:30.341018 [debug] [Thread-2 (]: Acquiring new snowflake connection 'test.modern_mds.unique_stg_posts_post_id.ec6994c39f'
+[0m12:07:30.343364 [debug] [Thread-3 (]: Began compiling node test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9
+[0m12:07:30.345729 [debug] [Thread-4 (]: Began compiling node test.modern_mds.not_null_stg_posts_user_id.66d77b29fa
+[0m12:07:30.347967 [debug] [Thread-2 (]: Began compiling node test.modern_mds.unique_stg_posts_post_id.ec6994c39f
+[0m12:07:30.380853 [debug] [Thread-3 (]: Writing injected SQL for node "test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9"
+[0m12:07:30.383046 [debug] [Thread-4 (]: Writing injected SQL for node "test.modern_mds.not_null_stg_posts_user_id.66d77b29fa"
+[0m12:07:30.394179 [debug] [Thread-2 (]: Writing injected SQL for node "test.modern_mds.unique_stg_posts_post_id.ec6994c39f"
+[0m12:07:30.410600 [debug] [Thread-3 (]: Began executing node test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9
+[0m12:07:30.426092 [debug] [Thread-4 (]: Began executing node test.modern_mds.not_null_stg_posts_user_id.66d77b29fa
+[0m12:07:30.441096 [debug] [Thread-2 (]: Began executing node test.modern_mds.unique_stg_posts_post_id.ec6994c39f
+[0m12:07:30.591855 [debug] [Thread-3 (]: Writing runtime sql for node "test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9"
+[0m12:07:30.596339 [debug] [Thread-4 (]: Writing runtime sql for node "test.modern_mds.not_null_stg_posts_user_id.66d77b29fa"
+[0m12:07:30.603745 [debug] [Thread-2 (]: Writing runtime sql for node "test.modern_mds.unique_stg_posts_post_id.ec6994c39f"
+[0m12:07:30.619160 [debug] [Thread-4 (]: Using snowflake connection "test.modern_mds.not_null_stg_posts_user_id.66d77b29fa"
+[0m12:07:30.622502 [debug] [Thread-4 (]: On test.modern_mds.not_null_stg_posts_user_id.66d77b29fa: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select user_id
+from API_DATA.ANALYTICS_staging.stg_posts
+where user_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.7", "profile_name": "modern_mds", "target_name": "dev", "node_id": "test.modern_mds.not_null_stg_posts_user_id.66d77b29fa"} */
+[0m12:07:30.624727 [debug] [Thread-3 (]: Using snowflake connection "test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9"
+[0m12:07:30.627398 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m12:07:30.630009 [debug] [Thread-3 (]: On test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select post_id
+from API_DATA.ANALYTICS_staging.stg_posts
+where post_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.7", "profile_name": "modern_mds", "target_name": "dev", "node_id": "test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9"} */
+[0m12:07:30.632686 [debug] [Thread-2 (]: Using snowflake connection "test.modern_mds.unique_stg_posts_post_id.ec6994c39f"
+[0m12:07:30.638792 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:07:30.642598 [debug] [Thread-2 (]: On test.modern_mds.unique_stg_posts_post_id.ec6994c39f: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    post_id as unique_field,
+    count(*) as n_records
+
+from API_DATA.ANALYTICS_staging.stg_posts
+where post_id is not null
+group by post_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.7", "profile_name": "modern_mds", "target_name": "dev", "node_id": "test.modern_mds.unique_stg_posts_post_id.ec6994c39f"} */
+[0m12:07:30.649417 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:07:31.706732 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 1.079 seconds
+[0m12:07:31.708224 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 1.069 seconds
+[0m12:07:31.718199 [info ] [Thread-4 (]: 3 of 4 PASS not_null_stg_posts_user_id ......................................... [[32mPASS[0m in 1.38s]
+[0m12:07:31.722572 [info ] [Thread-3 (]: 2 of 4 PASS not_null_stg_posts_post_id ......................................... [[32mPASS[0m in 1.39s]
+[0m12:07:31.724906 [debug] [Thread-4 (]: Finished running node test.modern_mds.not_null_stg_posts_user_id.66d77b29fa
+[0m12:07:31.727109 [debug] [Thread-3 (]: Finished running node test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9
+[0m12:07:31.751740 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.102 seconds
+[0m12:07:31.758032 [error] [Thread-2 (]: 4 of 4 FAIL 100 unique_stg_posts_post_id ....................................... [[31mFAIL 100[0m in 1.42s]
+[0m12:07:31.761144 [debug] [Thread-2 (]: Finished running node test.modern_mds.unique_stg_posts_post_id.ec6994c39f
+[0m12:07:31.763858 [debug] [Thread-7 (]: Marking all children of 'test.modern_mds.unique_stg_posts_post_id.ec6994c39f' to be skipped because of status 'fail'.  Reason: Got 100 results, configured to fail if != 0.
+[0m12:07:31.770238 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:07:31.772502 [debug] [MainThread]: Connection 'model.modern_mds.stg_posts' was left open.
+[0m12:07:31.774480 [debug] [MainThread]: On model.modern_mds.stg_posts: Close
+[0m12:07:31.894348 [debug] [MainThread]: Connection 'test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9' was left open.
+[0m12:07:31.896969 [debug] [MainThread]: On test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9: Close
+[0m12:07:32.029229 [debug] [MainThread]: Connection 'test.modern_mds.not_null_stg_posts_user_id.66d77b29fa' was left open.
+[0m12:07:32.031651 [debug] [MainThread]: On test.modern_mds.not_null_stg_posts_user_id.66d77b29fa: Close
+[0m12:07:32.159753 [debug] [MainThread]: Connection 'test.modern_mds.unique_stg_posts_post_id.ec6994c39f' was left open.
+[0m12:07:32.161925 [debug] [MainThread]: On test.modern_mds.unique_stg_posts_post_id.ec6994c39f: Close
+[0m12:07:32.282293 [info ] [MainThread]: 
+[0m12:07:32.288025 [info ] [MainThread]: Finished running 3 data tests, 1 view model in 0 hours 0 minutes and 5.87 seconds (5.87s).
+[0m12:07:32.293464 [debug] [MainThread]: Command end result
+[0m12:07:32.364372 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt/target/manifest.json
+[0m12:07:32.373975 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt/target/semantic_manifest.json
+[0m12:07:32.389309 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt/target/run_results.json
+[0m12:07:32.391106 [info ] [MainThread]: 
+[0m12:07:32.392983 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m12:07:32.395336 [info ] [MainThread]: 
+[0m12:07:32.397438 [error] [MainThread]: [31mFailure in test unique_stg_posts_post_id (models/staging/schema.yml)[0m
+[0m12:07:32.399562 [error] [MainThread]:   Got 100 results, configured to fail if != 0
+[0m12:07:32.401624 [info ] [MainThread]: 
+[0m12:07:32.403875 [info ] [MainThread]:   compiled code at target/compiled/modern_mds/models/staging/schema.yml/unique_stg_posts_post_id.sql
+[0m12:07:32.405781 [info ] [MainThread]: 
+[0m12:07:32.408117 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=4
+[0m12:07:32.412832 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 11.12668, "process_in_blocks": "136936", "process_kernel_time": 3.408057, "process_mem_max_rss": "227448", "process_out_blocks": "3744", "process_user_time": 8.021106}
+[0m12:07:32.415664 [debug] [MainThread]: Command `dbt build` failed at 12:07:32.415289 after 11.13 seconds
+[0m12:07:32.418683 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bc1e5142cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bc1e51406d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bc1ab35d810>]}
+[0m12:07:32.420988 [debug] [MainThread]: Flushing usage events
+[0m12:07:33.399691 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:31:11.893085 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71e0549e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71e0549e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71e01cb3d0>]}
+
+
+============================== 13:31:11.905148 | d24070a4-adff-4b4c-9785-90f048c23d2d ==============================
+[0m13:31:11.905148 [info ] [MainThread]: Running with dbt=1.10.7
+[0m13:31:11.909372 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/opt/airflow/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/opt/airflow/dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt build --project-dir /opt/airflow/dbt --profiles-dir /opt/airflow/dbt', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m13:31:14.000327 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd24070a4-adff-4b4c-9785-90f048c23d2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71ab17c910>]}
+[0m13:31:14.088235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd24070a4-adff-4b4c-9785-90f048c23d2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71ab050110>]}
+[0m13:31:14.092359 [info ] [MainThread]: Registered adapter: snowflake=1.10.0
+[0m13:31:14.355933 [debug] [MainThread]: checksum: 44f4b502e2ddc67beed4db71ce39b63f2d3b7fc0b96e49a69b096c8f6cc370bc, vars: {}, profile: , target: , version: 1.10.7
+[0m13:31:14.888789 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m13:31:14.891656 [debug] [MainThread]: Partial parsing: updated file: modern_mds://models/staging/stg_posts.sql
+[0m13:31:15.517995 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd24070a4-adff-4b4c-9785-90f048c23d2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71aac9c1d0>]}
+[0m13:31:15.664689 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt/target/manifest.json
+[0m13:31:15.676149 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt/target/semantic_manifest.json
+[0m13:31:15.762376 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd24070a4-adff-4b4c-9785-90f048c23d2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71a8886a90>]}
+[0m13:31:15.765543 [info ] [MainThread]: Found 1 model, 3 data tests, 1 source, 477 macros
+[0m13:31:15.771884 [info ] [MainThread]: 
+[0m13:31:15.775509 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:31:15.781779 [info ] [MainThread]: 
+[0m13:31:15.784950 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m13:31:15.788567 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_API_DATA'
+[0m13:31:15.900248 [debug] [ThreadPool]: Using snowflake connection "list_API_DATA"
+[0m13:31:15.902058 [debug] [ThreadPool]: On list_API_DATA: show terse schemas in database API_DATA
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.7", "profile_name": "modern_mds", "target_name": "dev", "connection_name": "list_API_DATA"} */
+[0m13:31:15.903572 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:31:16.953357 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.050 seconds
+[0m13:31:16.959571 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_API_DATA, now list_API_DATA_ANALYTICS_staging)
+[0m13:31:16.977920 [debug] [ThreadPool]: Using snowflake connection "list_API_DATA_ANALYTICS_staging"
+[0m13:31:16.979759 [debug] [ThreadPool]: On list_API_DATA_ANALYTICS_staging: show objects in API_DATA.ANALYTICS_staging
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.7", "profile_name": "modern_mds", "target_name": "dev", "connection_name": "list_API_DATA_ANALYTICS_staging"} */;
+[0m13:31:17.253983 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.273 seconds
+[0m13:31:17.259827 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd24070a4-adff-4b4c-9785-90f048c23d2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71a841eb10>]}
+[0m13:31:17.273283 [debug] [Thread-1 (]: Began running node model.modern_mds.stg_posts
+[0m13:31:17.276075 [info ] [Thread-1 (]: 1 of 4 START sql view model ANALYTICS_staging.stg_posts ........................ [RUN]
+[0m13:31:17.278552 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_API_DATA_ANALYTICS_staging, now model.modern_mds.stg_posts)
+[0m13:31:17.280719 [debug] [Thread-1 (]: Began compiling node model.modern_mds.stg_posts
+[0m13:31:17.292720 [debug] [Thread-1 (]: Writing injected SQL for node "model.modern_mds.stg_posts"
+[0m13:31:17.308846 [debug] [Thread-1 (]: Began executing node model.modern_mds.stg_posts
+[0m13:31:17.358736 [debug] [Thread-1 (]: Writing runtime sql for node "model.modern_mds.stg_posts"
+[0m13:31:17.374126 [debug] [Thread-1 (]: Using snowflake connection "model.modern_mds.stg_posts"
+[0m13:31:17.376209 [debug] [Thread-1 (]: On model.modern_mds.stg_posts: create or replace   view API_DATA.ANALYTICS_staging.stg_posts
+  
+  
+  
+  
+  as (
+    with raw_posts as (
+  select
+    try_to_number(userId) as user_id,
+    try_to_number(id)     as post_id,
+    cast(title as string) as title,
+    cast(body  as string) as body
+  from API_DATA.RAW.POSTS
+  qualify row_number() over (partition by id order by id) = 1
+)
+select * from raw_posts
+  )
+/* {"app": "dbt", "dbt_version": "1.10.7", "profile_name": "modern_mds", "target_name": "dev", "node_id": "model.modern_mds.stg_posts"} */;
+[0m13:31:17.852299 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.476 seconds
+[0m13:31:17.893877 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd24070a4-adff-4b4c-9785-90f048c23d2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71a8248110>]}
+[0m13:31:17.896425 [info ] [Thread-1 (]: 1 of 4 OK created sql view model ANALYTICS_staging.stg_posts ................... [[32mSUCCESS 1[0m in 0.61s]
+[0m13:31:17.900173 [debug] [Thread-1 (]: Finished running node model.modern_mds.stg_posts
+[0m13:31:17.904487 [debug] [Thread-3 (]: Began running node test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9
+[0m13:31:17.905565 [debug] [Thread-4 (]: Began running node test.modern_mds.not_null_stg_posts_user_id.66d77b29fa
+[0m13:31:17.906681 [debug] [Thread-2 (]: Began running node test.modern_mds.unique_stg_posts_post_id.ec6994c39f
+[0m13:31:17.909624 [info ] [Thread-3 (]: 2 of 4 START test not_null_stg_posts_post_id ................................... [RUN]
+[0m13:31:17.913809 [info ] [Thread-4 (]: 3 of 4 START test not_null_stg_posts_user_id ................................... [RUN]
+[0m13:31:17.917481 [info ] [Thread-2 (]: 4 of 4 START test unique_stg_posts_post_id ..................................... [RUN]
+[0m13:31:17.924072 [debug] [Thread-3 (]: Acquiring new snowflake connection 'test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9'
+[0m13:31:17.927200 [debug] [Thread-4 (]: Acquiring new snowflake connection 'test.modern_mds.not_null_stg_posts_user_id.66d77b29fa'
+[0m13:31:17.930028 [debug] [Thread-2 (]: Acquiring new snowflake connection 'test.modern_mds.unique_stg_posts_post_id.ec6994c39f'
+[0m13:31:17.932113 [debug] [Thread-3 (]: Began compiling node test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9
+[0m13:31:17.935028 [debug] [Thread-4 (]: Began compiling node test.modern_mds.not_null_stg_posts_user_id.66d77b29fa
+[0m13:31:17.937294 [debug] [Thread-2 (]: Began compiling node test.modern_mds.unique_stg_posts_post_id.ec6994c39f
+[0m13:31:17.968295 [debug] [Thread-3 (]: Writing injected SQL for node "test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9"
+[0m13:31:17.969551 [debug] [Thread-4 (]: Writing injected SQL for node "test.modern_mds.not_null_stg_posts_user_id.66d77b29fa"
+[0m13:31:17.984684 [debug] [Thread-2 (]: Writing injected SQL for node "test.modern_mds.unique_stg_posts_post_id.ec6994c39f"
+[0m13:31:17.996023 [debug] [Thread-4 (]: Began executing node test.modern_mds.not_null_stg_posts_user_id.66d77b29fa
+[0m13:31:17.997723 [debug] [Thread-2 (]: Began executing node test.modern_mds.unique_stg_posts_post_id.ec6994c39f
+[0m13:31:18.004328 [debug] [Thread-3 (]: Began executing node test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9
+[0m13:31:18.062825 [debug] [Thread-3 (]: Writing runtime sql for node "test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9"
+[0m13:31:18.065190 [debug] [Thread-4 (]: Writing runtime sql for node "test.modern_mds.not_null_stg_posts_user_id.66d77b29fa"
+[0m13:31:18.059021 [debug] [Thread-2 (]: Writing runtime sql for node "test.modern_mds.unique_stg_posts_post_id.ec6994c39f"
+[0m13:31:18.076061 [debug] [Thread-4 (]: Using snowflake connection "test.modern_mds.not_null_stg_posts_user_id.66d77b29fa"
+[0m13:31:18.078043 [debug] [Thread-3 (]: Using snowflake connection "test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9"
+[0m13:31:18.079258 [debug] [Thread-4 (]: On test.modern_mds.not_null_stg_posts_user_id.66d77b29fa: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select user_id
+from API_DATA.ANALYTICS_staging.stg_posts
+where user_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.7", "profile_name": "modern_mds", "target_name": "dev", "node_id": "test.modern_mds.not_null_stg_posts_user_id.66d77b29fa"} */
+[0m13:31:18.081496 [debug] [Thread-3 (]: On test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select post_id
+from API_DATA.ANALYTICS_staging.stg_posts
+where post_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.7", "profile_name": "modern_mds", "target_name": "dev", "node_id": "test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9"} */
+[0m13:31:18.083085 [debug] [Thread-2 (]: Using snowflake connection "test.modern_mds.unique_stg_posts_post_id.ec6994c39f"
+[0m13:31:18.084449 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m13:31:18.086071 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m13:31:18.087917 [debug] [Thread-2 (]: On test.modern_mds.unique_stg_posts_post_id.ec6994c39f: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    post_id as unique_field,
+    count(*) as n_records
+
+from API_DATA.ANALYTICS_staging.stg_posts
+where post_id is not null
+group by post_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.7", "profile_name": "modern_mds", "target_name": "dev", "node_id": "test.modern_mds.unique_stg_posts_post_id.ec6994c39f"} */
+[0m13:31:18.097874 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m13:31:18.888642 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.802 seconds
+[0m13:31:18.889906 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.805 seconds
+[0m13:31:18.897065 [info ] [Thread-3 (]: 2 of 4 PASS not_null_stg_posts_post_id ......................................... [[32mPASS[0m in 0.97s]
+[0m13:31:18.901176 [info ] [Thread-4 (]: 3 of 4 PASS not_null_stg_posts_user_id ......................................... [[32mPASS[0m in 0.97s]
+[0m13:31:18.904019 [debug] [Thread-3 (]: Finished running node test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9
+[0m13:31:18.906342 [debug] [Thread-4 (]: Finished running node test.modern_mds.not_null_stg_posts_user_id.66d77b29fa
+[0m13:31:18.936010 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.838 seconds
+[0m13:31:18.941217 [info ] [Thread-2 (]: 4 of 4 PASS unique_stg_posts_post_id ........................................... [[32mPASS[0m in 1.01s]
+[0m13:31:18.944561 [debug] [Thread-2 (]: Finished running node test.modern_mds.unique_stg_posts_post_id.ec6994c39f
+[0m13:31:18.950113 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:31:18.951941 [debug] [MainThread]: Connection 'model.modern_mds.stg_posts' was left open.
+[0m13:31:18.953521 [debug] [MainThread]: On model.modern_mds.stg_posts: Close
+[0m13:31:19.131536 [debug] [MainThread]: Connection 'test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9' was left open.
+[0m13:31:19.134417 [debug] [MainThread]: On test.modern_mds.not_null_stg_posts_post_id.cd5975e2d9: Close
+[0m13:31:19.262619 [debug] [MainThread]: Connection 'test.modern_mds.not_null_stg_posts_user_id.66d77b29fa' was left open.
+[0m13:31:19.265229 [debug] [MainThread]: On test.modern_mds.not_null_stg_posts_user_id.66d77b29fa: Close
+[0m13:31:19.388848 [debug] [MainThread]: Connection 'test.modern_mds.unique_stg_posts_post_id.ec6994c39f' was left open.
+[0m13:31:19.391191 [debug] [MainThread]: On test.modern_mds.unique_stg_posts_post_id.ec6994c39f: Close
+[0m13:31:19.595200 [info ] [MainThread]: 
+[0m13:31:19.598531 [info ] [MainThread]: Finished running 3 data tests, 1 view model in 0 hours 0 minutes and 3.81 seconds (3.81s).
+[0m13:31:19.603267 [debug] [MainThread]: Command end result
+[0m13:31:19.670080 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt/target/manifest.json
+[0m13:31:19.679720 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt/target/semantic_manifest.json
+[0m13:31:19.694430 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt/target/run_results.json
+[0m13:31:19.696252 [info ] [MainThread]: 
+[0m13:31:19.698268 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:31:19.700251 [info ] [MainThread]: 
+[0m13:31:19.702721 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m13:31:19.710040 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 7.937436, "process_in_blocks": "120520", "process_kernel_time": 2.95231, "process_mem_max_rss": "223572", "process_out_blocks": "16", "process_user_time": 6.34342}
+[0m13:31:19.713117 [debug] [MainThread]: Command `dbt build` succeeded at 13:31:19.712868 after 7.94 seconds
+[0m13:31:19.715142 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71e01cbf90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71e4a0ee90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71e47a7510>]}
+[0m13:31:19.716992 [debug] [MainThread]: Flushing usage events
+[0m13:31:20.680467 [debug] [MainThread]: An error was encountered while trying to flush usage events

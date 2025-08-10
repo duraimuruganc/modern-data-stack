@@ -1,0 +1,10 @@
+name: modern_mds
+version: "1.0"
+config-version: 2
+profile: modern_mds
+
+models:
+  modern_mds:
+    +materialized: view
+    staging:
+      +schema: staging
